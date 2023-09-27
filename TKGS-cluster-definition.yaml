@@ -1,0 +1,22 @@
+apiVersion: run.tanzu.vmware.com/v1alpha2
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkgs-v2-cluster-default
+  namespace: test-namespace
+spec:
+  topology:
+    controlPlane:
+      replicas: 3
+      vmClass: best-effort-small
+      storageClass: vsan-default-storage-policy
+      tkr:  
+        reference:
+          name: v1.24.11---vmware.1-fips.1-tkg.1
+    nodePools:
+    - name: worker
+      replicas: 3
+      vmClass: best-effort-small
+      storageClass: vsan-default-storage-policy
+      tkr:  
+        reference:
+          name: v1.24.11---vmware.1-fips.1-tkg.1
