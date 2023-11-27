@@ -4,7 +4,7 @@
 ```
 $env:KUBECTL_VSPHERE_PASSWORD="<password>"
 kubectl vsphere login --server=<ip-address> --vsphere-username=<domain>\<username> --insecure-skip-tls-verify
-kubectl config use-context orsted-test
+kubectl config use-context test-namespace
 kubectl apply -f .\tkg-cluster-definition.yaml
 ```
 
