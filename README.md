@@ -20,7 +20,7 @@ $base64Kubeconfig   = kubectl get secret tkgs-v2-cluster-default-kubeconfig -n <
 $kubeconfig         = [ System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($base64Kubeconfig))
 
 $kubeconfig | Out-File -Encoding utf8 tkg-v2-cluster-default-kubeconfig.yaml
-$env:KUBECONFIG="$PWD.Path\tkg-v2-cluster-default-kubeconfig.yaml"
+$env:KUBECONFIG="$($PWD.Path)\tkg-v2-cluster-default-kubeconfig.yaml"
 ```
 
 ## Lower security to be able to deploy containers
